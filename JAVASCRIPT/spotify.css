@@ -1,0 +1,27 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+nav img{
+    height: 40px;
+    width: 40px;
+}
+.brand{
+    
+    display: flex;
+    height: 40px;
+    background-color: black;
+    color: white;
+    align-items: center;
+}
+#spi{
+    display: flex; 
+}
+
+.top{
+  display: flex;
+  list-style: none;
+}
+
+

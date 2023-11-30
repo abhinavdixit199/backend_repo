@@ -1,0 +1,173 @@
+There are 3 ways of adding CSS :=
+  a. INternal  used if you have to style a single element
+   written inside the head tag with properties defined for each element
+   <style> </style>  tag is used
+   inside style 
+   the element on which styling is to be done is written in format described below:
+   <style>
+      element_name{
+        properties like color:blue
+      }
+   </style>
+
+
+
+
+
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////
+  b. Inline    used if you have to style a single webpage
+ description is given inside each element you want to modify
+
+
+
+
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  c. External  used if you have to style multiple webpage
+all code is written in external files and kind of referenced with th main code
+link tag is used to inherit the style sheet which is a self closing tag
+<link rel="do not know"   href="source"/>
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+CSS selectors
+
+
+1- ELEMENT SELECTORS- THis will apply the css to all the elements
+syntax->   element_name{
+
+  css code ex-.color:blue
+}
+
+2-CLASS SELECTORS-
+In the element you can name a class by uisng class attribute
+FOR EX->    <h2 class="nameofclass"> RED</h2>
+any element with this class name will get the css styling
+
+for writing css code for this class  syntax is as follows
+
+.classname{
+  css code
+}
+
+3-ID selector
+It is similar to class selector but it can be used only for unique element
+
+syntax-> <h2 id="name"> content</h2>
+
+css syntax
+#name{
+  css code
+}
+
+4- ATTRIBUTE SELECTORS
+this is used to apply the css to all element with this attribute
+<h2 color="red" draggable>heading</h2>
+<h2 color="green" draggable>heading</h2>
+<h2 color="blue" draggable="true">heading</h2>
+
+
+css code
+elementname[attribute name]{
+  css code
+}
+now instead of just attribute name you can also select attribute with its value
+like draggable="true" which is given in third h2 tag;
+
+5 UNIVERSAL SELECTORS
+This applies to all elements 
+just use
+
+*{
+  css code
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+POSITIONS
+WHENEVER YOU SET POSITION FOR A CONTAINER YOU CAN MOVE IT IN ANY DIRECTION YOU WANT WITH 
+ELEMENTS LIKE TOP BOTTOM RIGHT LEFT
+POSITION STATIC 
+IT IS BY DEFAULT
+
+
+POSITION ABSOLUTE;
+IN ABSOLUTE POSITION THE BOX IS MOVED TOP BOTTOM LEFT OR RIGHT WITH RESPECT TO 
+THE PARENT LEFT AND  IF NO PARENT ELEMENT THEN WRT TOP LEFT CORNER
+
+
+
+POSITION RELATIVE;
+IN RELATIVE POSITION THE BOX OR CONTAINER MOVERS WRT THE POSITION IT SHOULD HAVE
+BEEN LIKE ITS NORMAL POSITION BASED ON TYPE OF DISPLAY.
+
+
+
+POSITION FIXED;
+WITH FIXED POSITON THE POSITION OF ELEMENT IS FIXED AT SPECIFIED COORDINATES
+
+POSITION STICKY
+IN THIS POSITION THE POSITION IS STICKED LIKE YOU KEEP SCROLLING THEN THE BOX SCROLLS AS SOON a
+AS IT REACHES TOP OF WINDOW IT STICKS THERE
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+COMBINATORS USE OF VARIOUS SELECTORS TOGETHER
+
+Child Selector (>)
+The child selector selects all elements that are the children of a specified element.
+it only means direct child and only upto one level deep
+
+The following example selects all <p> elements that are children of a <div> element:
+
+
+
+DESCENDANT SELECTOR( )
+div p {
+  background-color: yellow;
+}
+The following example selects all <p> elements that are children of a <div> elemenT
+
+COMMA SELECTOR
+if two element are separated by"," then the css code will apply to both of them
+
+
+CLASS ELEMENT
+syntax is        .class name-of-all-element-inside-it{
+
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+FLEX;
+
+To use flex we first declare 
+display flex;
+flex direction- this is used to flex items either in row or column;
+flex wrap- when this is set to wrap the content moves to next row or column as specified in flex direction
+flex flow- this is a combination of flex flow and flex wrap
+justify-content: this is used to align the text in horizontal axis with many properties like center,space between
+align items: this is used to align the text in vertical axis
+align-contents-align-content	Modifies the behavior of the flex-wrap property. It is similar to align-items,
+ but instead of aligning flex items, it aligns flex lines
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Padding is used to create space around an element's content, inside of any defined borders
+Margins are used to create space around elements, outside of any defined borders
+The CSS border properties allow you to specify the style, width, and color of an element's borde
+**********************************************************************************************************************
+
+
+
+
+
+
+
+
+
+

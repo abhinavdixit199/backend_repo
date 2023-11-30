@@ -1,0 +1,9 @@
+{
+    "query": "SELECT fields FROM bigObject",
+    "operation": "<insert update upsert>",
+    "targetObject": "<custom object>",
+    "targetFieldMap": {
+        "firstField__c": "firstFieldTarget__c",
+        "secondField__c": "secondFieldTarget__c"
+    }
+}

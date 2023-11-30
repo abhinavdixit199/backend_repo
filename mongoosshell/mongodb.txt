@@ -1,0 +1,30 @@
+show dbs to show the total databases
+use x will make a collection named x
+db.y.insertOne()/insertMany will make a document named y in active database that is x here
+show collections will show you total documents in active collection
+to see the data of document z use db.z.find()// .pretty is added to get data in a arranged syntax
+to insert more than 1 data in a document use  db.s.insertMany([{},{},{}])
+
+now we will see query selectors
+   db.documentname.find(query ,projection)
+   the syntax of queries like name:abhinav then only data in the above document with name:abhinav will show 
+   the projection is like setting what from the above query have to be shown like if you set limit:1 then only 1 data of the document with specified query will show up
+   in projection field setting any key to 0 will show all the thing except key and setting key to 1 will only show key from the above key value pairs in document data\
+   there is also a method of .skip(n) where q skips n data matching the query
+instead of setting limit =1 you can directly use db.documentname.findOne({})
+
+
+
+***********************
+to update  db.documentname.updateOne({filter},{update})
+db.docuabhi.updateOne({name:abhinav}, {$set:{class:6}}) // it only updates one even if two have same name it only updates the top one
+
+to updateMany is same
+db.docuabhi.updateMany({type:frontend},{$set:{classs:9}})
+
+
+// to delete
+db.documentname>deleteOne/deleteMany({filter})
+delete one will delete one 
+delete many will delete many  if filter is given 
+in case if filter is not given in deletemany it will delete the whole document data
