@@ -31,8 +31,10 @@ app.post("/register", async (req, res) => {
                 firstname: req.body.firstname,
                 lastname: req.body.lastname,
                 gender: req.body.gender,
-                // password: password,
-                // confirmpassword: cpassword
+                phone: req.body.phone,
+                email: req.body.email,
+                password: password,
+                confirmpassword: cpassword
             })
             const registered = await registerEmployee.save();
             console.log(registered)
@@ -45,7 +47,24 @@ app.post("/register", async (req, res) => {
     catch (e) {
         res.status(400).send(e);
     }
-       
+
+})
+app.get("/login", (req, res) => {
+    res.render("login")
+})
+app.post("/login", async (req, res)=> {
+    try {
+        const email = req.body.lemail;
+        const password = req.body.lpsw;
+        const useremail = await Register.findOne({ email: email });
+        if (useremail.password === password) {
+            res.status(201).render("index");
+        } else {
+            res.send("invalid login Details");
+        }
+    } catch (error) {
+        res.status(400).send("invalid login Details")
+    }
 })
 
 

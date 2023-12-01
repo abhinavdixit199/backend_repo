@@ -8,27 +8,27 @@ const employeeSchema= new mongoose.Schema({
         type:String,
         required:true
     },
-    // email:{
-    //     type:String,
-    //     unique:true,
-    //     // required:true
-    // },
+    email:{
+        type:String,
+        unique:true,
+        required:true
+    },
     gender:{
         type:String,
-        // required:true
+        required:true
     },
-    // phone:{
-    //     type:Number,
-    //     // required:true,
-    //     unique:true
-    // }
+    phone:{
+        type:Number,
+        // required:true,
+        unique:true
+    },
     password:{
         type:String,
-        // required:true,
+        required:true,
     },
     confirmpassword:{
         type:String,
-        // required:true,
+        required:true,
     }
 })
 module.exports=mongoose.model('Register',employeeSchema)
