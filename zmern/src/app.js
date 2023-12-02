@@ -1,8 +1,10 @@
 var express = require("express");
 var path = require("path")
 var hbs = require("hbs")
+var bcrypt=require("bcrypt")
 // const mongoose=require("mongoose")
-const Register = require("./models/register")
+const Register = require("./models/register");
+const { findById } = require("./models/register");
 require("./db/conn");// how can it happen without export
 var app = express();
 const port = process.env.PORT || 7000;
@@ -21,6 +23,14 @@ app.get("/", (req, res) => {
 app.get("/register", (req, res) => {
     res.render("register")
 })
+app.get("/registe",async(req,res)=>{
+    try{
+        const lala=await Register.find();  /// for getting the full data in database
+        res.send(lala);
+    }catch(e){
+        res.send(e);
+    } 
+    })
 app.post("/register", async (req, res) => {
     try {
         // res.send(req.body.firstname)
@@ -57,10 +67,11 @@ app.post("/login", async (req, res)=> {
         const email = req.body.lemail;
         const password = req.body.lpsw;
         const useremail = await Register.findOne({ email: email });
-        if (useremail.password === password) {
+        const isMatch =await bcrypt.compare(password,useremail.password)
+        if (isMatch) {
             res.status(201).render("index");
         } else {
-            res.send("invalid login Details");
+            res.send("invalid password Details");
         }
     } catch (error) {
         res.status(400).send("invalid login Details")
