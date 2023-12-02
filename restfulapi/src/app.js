@@ -30,7 +30,7 @@ try{
     res.send(studentData);
 }catch(e){
     res.send(e);
-}
+} 
 })
 
 // app.get("/student/:id",async(req,res)=>{
